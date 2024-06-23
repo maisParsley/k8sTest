@@ -1,0 +1,23 @@
+namespace: maisns
+
+image:
+  repository: nginx
+  tag: latest
+
+serviceAccount:
+  name: imaisuradze
+
+labels: {}
+
+indexContent: |
+  <html>
+  <head><title>Welcome</title></head>
+  <body><h1>Hello from nginx</h1></body>
+  </html>
+s
+service:
+  type: ClusterIP
+  port: 80
+
+virtualService:
+  host: web-server
